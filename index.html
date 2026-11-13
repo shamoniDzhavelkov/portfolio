@@ -113,6 +113,15 @@ body { background: radial-gradient(ellipse at 82% 0%, #172b24, transparent 45rem
 @keyframes orbit-in { from { transform:rotate(-100deg); opacity:0; } to { transform:rotate(0); opacity:1; } }
 @keyframes core-in { from { transform:rotate(30deg) scale(.8); opacity:.3; } to { transform:rotate(45deg) scale(1); opacity:1; } }
 @media(max-width:680px) { .hero { grid-template-columns:1fr; min-height:auto; } .hero-art { display:none; } }
+
+.hero-identity { color:var(--green); font-size:clamp(12px,1.2vw,15px); margin:0 0 20px; }
+.hero-name { font-size:clamp(34px,5.1vw,72px); line-height:1.04; overflow-wrap:normal; text-wrap:balance; }
+.hero-desc { max-width:59ch; }
+.hero-art { max-width:340px; }
+.project-proof { margin:0; padding-left:13px; border-left:2px solid var(--green); color:var(--ink); }
+.project-card.featured { padding-block:clamp(24px,4vw,50px); }
+@media(min-width:900px) { #skills .projects-grid { grid-template-columns:repeat(3,minmax(0,1fr)); } }
+@media(max-width:680px) { .hero-name { font-size:clamp(32px,8.5vw,52px); } }
 </style>
 </head>
 <body>
@@ -124,11 +133,12 @@ body { background: radial-gradient(ellipse at 82% 0%, #172b24, transparent 45rem
   <main id="top">
   <header class="hero">
     <div class="hero-content">
-    <h1 class="hero-name">Shamoni <span>Dzhavelkov</span></h1>
-    <p class="hero-desc">I build software around the way teams work, from solar design and field service to e-commerce and desktop automation.</p>
+    <p class="hero-identity">Shamoni Dzhavelkov · Independent software builder</p>
+    <h1 class="hero-name">Build the software <span>your business needs.</span></h1>
+    <p class="hero-desc">I turn complex workflows into web apps, mobile products, and automations. Bring me a process that’s slowing your team down or a product you want to launch. I’ll help you define the first release and build it.</p>
     <div class="actions">
-      <a class="cta-btn" href="#projects">View projects</a>
-      <a class="cta-btn secondary" href="https://www.upwork.com/freelancers/~010078c58ec96b534c?mp_source=share">Connect on Upwork</a>
+      <a class="cta-btn" href="#projects">See what I’ve built</a>
+      <a class="cta-btn secondary" href="https://www.upwork.com/freelancers/~010078c58ec96b534c?mp_source=share">Discuss your project ↗</a>
     </div>
     <p class="hero-meta">Sofia, Bulgaria · EU timezone · Starting at $55/hr</p>
       </div>
@@ -140,13 +150,14 @@ body { background: radial-gradient(ellipse at 82% 0%, #172b24, transparent 45rem
   </header>
 
   <section class="section" id="projects">
-    <h2 class="section-title">Selected projects</h2>
+    <h2 class="section-title">See the work</h2>
     <div class="projects-grid">
 
       <div class="project-card featured">
         <div class="project-num">Solar engineering platform</div>
         <h3 class="project-name">SolarPlanPro</h3>
         <p class="project-desc">Design solar installations with an interactive 3D roof model, PVGIS irradiance data, and calculations designed around IEC 62548. Teams can collaborate in real time, work offline, and export results in six formats.</p>
+        <p class="project-proof">I built the design workflow from roof modeling through engineering exports, with offline support and real-time collaboration.</p>
         <div class="project-tags">
           <span class="ptag">SaaS Platform</span>
           <span class="ptag">PWA</span>
@@ -162,6 +173,7 @@ body { background: radial-gradient(ellipse at 82% 0%, #172b24, transparent 45rem
         <div class="project-num">HVAC service management platform</div>
         <h3 class="project-name">SClima Manager</h3>
         <p class="project-desc">From the first service request to the completed job, SClima Manager gives office staff and field technicians one place to work. It combines installation and service scheduling, customer and equipment history, quotes, service reports, warranties, and inventory. Technicians manage assigned jobs from their phones. The Bulgarian-language MVP was tested locally.</p>
+        <p class="project-proof">I turned a workflow spread across phone calls, Viber, and paper into a single workspace for office staff and field technicians.</p>
         <div class="project-tags"><span class="ptag">Next.js</span> <span class="ptag">TypeScript</span> <span class="ptag">PostgreSQL</span> <span class="ptag">Role-based access</span></div>
       </article>
 
@@ -233,87 +245,18 @@ body { background: radial-gradient(ellipse at 82% 0%, #172b24, transparent 45rem
     </div>
   </section>
 
-  <!-- SKILLS -->
   <section class="section" id="skills">
-    <h2 class="section-title">How I build things.</h2>
-    <div class="skills-section">
-      <div>
-        <div class="skill-group-title">Tools & Platforms</div>
-        <div class="skill-row">
-          <span class="skill-name">Claude Code and AI-assisted development</span>
-          
-        </div>
-        <div class="skill-row">
-          <span class="skill-name">WordPress</span>
-          
-        </div>
-        <div class="skill-row">
-          <span class="skill-name">Shopify</span>
-          
-        </div>
-        <div class="skill-row">
-          <span class="skill-name">Electron (Desktop Apps)</span>
-          
-        </div>
-        <div class="skill-row">
-          <span class="skill-name">HTML / CSS / JavaScript</span>
-          
-        </div>
-        <div class="skill-row">
-          <span class="skill-name">Bilingual (EN / BG) builds</span>
-          
-        </div>
-        <div class="skill-row">
-          <span class="skill-name">PDF / CSV / PNG data export</span>
-          
-        </div>
-        <div class="skill-row">
-          <span class="skill-name">Complex UI &amp; data visualisation</span>
-          
-        </div>
-      </div>
-      <div>
-        <div class="skill-group-title">What I deliver</div>
-        <div class="skill-row"><span class="skill-name">React Native &amp; Expo mobile apps</span></div>
-        <div class="skill-row"><span class="skill-name">Supabase backends and AI extraction workflows</span></div>
-        <div class="skill-row"><span class="skill-name">Dashboards and Home Assistant integrations</span></div>
-        <div class="services-list">
-          <div class="service-item">
-            <span class="service-name">Complex web apps from scratch</span>
-            <span class="service-arrow">↗</span>
-          </div>
-          <div class="service-item">
-            <span class="service-name">Landing pages & business sites</span>
-            <span class="service-arrow">↗</span>
-          </div>
-          <div class="service-item">
-            <span class="service-name">Shopify stores & customisation</span>
-            <span class="service-arrow">↗</span>
-          </div>
-          <div class="service-item">
-            <span class="service-name">WordPress builds & theme refactors</span>
-            <span class="service-arrow">↗</span>
-          </div>
-          <div class="service-item">
-            <span class="service-name">Custom Electron desktop apps</span>
-            <span class="service-arrow">↗</span>
-          </div>
-          <div class="service-item">
-            <span class="service-name">Internal tools & workflow automation</span>
-            <span class="service-arrow">↗</span>
-          </div>
-          <div class="service-item">
-            <span class="service-name">Bilingual (EN/BG) web projects</span>
-            <span class="service-arrow">↗</span>
-          </div>
-        </div>
-      </div>
+    <h2 class="section-title">What I can build for you</h2>
+    <div class="projects-grid">
+      <article class="project-card"><h3 class="project-name">Launch a product</h3><p class="project-desc">Define the first release, then build the web or mobile experience, backend, and integrations it needs.</p></article>
+      <article class="project-card"><h3 class="project-name">Simplify operations</h3><p class="project-desc">Bring scheduling, reporting, or repeated manual work into a dashboard, desktop app, or automated workflow.</p></article>
+      <article class="project-card"><h3 class="project-name">Upgrade a website</h3><p class="project-desc">Build or refine a Shopify storefront, WordPress site, or bilingual customer experience.</p></article>
     </div>
   </section>
 
   <section class="cta-section" id="contact">
-    <h2 class="cta-title">Let’s talk about your project.</h2>
-    <p class="cta-sub">Available for fixed-price and hourly work.</p>
+    <h2 class="cta-title">What would you like to build?</h2>
+    <p class="cta-sub">Send me the workflow you want to improve or the product you want to launch. We’ll identify what belongs in the first release. Fixed-price and hourly work available.</p>
     <div class="actions">
       <a class="cta-btn" href="https://www.upwork.com/freelancers/~010078c58ec96b534c?mp_source=share">Hire on Upwork</a>
       <a class="cta-btn secondary" href="https://www.fiverr.com/s/YR22Qqd">Find me on Fiverr</a>
@@ -322,3 +265,4 @@ body { background: radial-gradient(ellipse at 82% 0%, #172b24, transparent 45rem
   </main>
 </body>
 </html>
+
