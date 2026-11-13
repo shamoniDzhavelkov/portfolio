@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta name="description" content="Portfolio of Shamoni Dzhavelkov, featuring web and mobile apps, e-commerce, desktop tools, and automation." />
   <title>Shamoni Dzhavelkov | Software & Automation Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Syne:wght@400;600;700;800&display=optional" rel="stylesheet">
   <style>
 :root{color-scheme:light;--paper:#f6f4ed;--ink:#192820;--muted:#526056;--line:#cdd4c8;--green:#294c3b;--wash:#e2ebdb;--mid:var(--muted)}
 *{box-sizing:border-box}
@@ -71,9 +73,6 @@ a:focus-visible{outline-color:var(--green)}
 
 @media (prefers-reduced-motion: no-preference) {
   .hero::before { animation: grid-in 1.4s ease-out both; }
-  .hero-name, .hero-desc, .hero .actions { animation: hero-in .65s ease-out both; }
-  .hero-desc { animation-delay: .09s; }
-  .hero .actions { animation-delay: .16s; }
   .project-card { transition: border-color .2s ease, transform .2s ease; }
   .project-link::after { display: inline-block; transition: transform .2s ease; }
   .project-link:focus-visible::after { transform: translate(3px, -3px); }
@@ -81,10 +80,6 @@ a:focus-visible{outline-color:var(--green)}
 @media (hover: hover) and (prefers-reduced-motion: no-preference) {
   .project-card:hover { transform: translateY(-4px); }
   .project-link:hover::after { transform: translate(3px, -3px); }
-}
-@keyframes hero-in {
-  from { opacity: 0; transform: translateY(12px); }
-  to { opacity: 1; transform: translateY(0); }
 }
 @keyframes grid-in {
   from { opacity: 0; background-position: 0 0, 0 -24px, 0 0; }
@@ -265,4 +260,5 @@ body { background: radial-gradient(ellipse at 82% 0%, #172b24, transparent 45rem
   </main>
 </body>
 </html>
+
 
