@@ -90,6 +90,29 @@ a:focus-visible{outline-color:var(--green)}
   from { opacity: 0; background-position: 0 0, 0 -24px, 0 0; }
   to { opacity: 1; background-position: 0 0, 0 0, 0 0; }
 }
+
+/* Portfolio visual system */
+:root { color-scheme: dark; --paper:#080b0e; --ink:#f3f7f4; --green:#c8ff56; --line:#33413c; --wash:#101a16; }
+body { background: radial-gradient(ellipse at 82% 0%, #172b24, transparent 45rem), var(--paper); }
+.hero { display:grid; grid-template-columns:minmax(0, 1.6fr) minmax(0, 1fr); align-items:center; gap:24px; min-height:470px; }
+.hero-name { font-size:clamp(36px, 6.9vw, 100px); }
+.hero-art { position:relative; display:grid; place-items:center; aspect-ratio:1; max-width:370px; width:100%; justify-self:center; isolation:isolate; }
+.hero-art::before { content:""; position:absolute; inset:0; border:1px solid #739e6829; border-radius:50%; background:repeating-radial-gradient(circle,transparent 0 27px,#a8df7422 28px 29px),radial-gradient(circle,#93f55924,transparent 66%); }
+.hero-orbit { position:absolute; inset:9%; border:1px dashed #b8ff677a; border-radius:50%; }
+.hero-orbit::after { content:""; position:absolute; top:13%; right:13%; width:8px; height:8px; background:var(--green); border-radius:50%; box-shadow:0 0 24px var(--green); }
+.hero-core { width:38%; aspect-ratio:1; border:1px solid #d3ff8e; border-radius:22%; transform:rotate(45deg); background:linear-gradient(145deg,#bcff4b50,#68e5b31a 55%,#0d211b); box-shadow:0 0 65px #96ff4740,inset 0 0 32px #9fff6240; }
+.hero-core::after { content:""; position:absolute; inset:16%; border:1px solid #ccff7666; border-radius:inherit; }
+.hero-art .hero-orbit:nth-child(2) { inset:20%; transform:rotate(155deg); }
+.project-card { background:linear-gradient(155deg,#16211d,#0d1315 65%); }
+.project-card.featured { background:linear-gradient(135deg,#243823,#101a16 67%); box-shadow:inset 0 1px #c8ff5650; }
+.project-card.featured:nth-child(2) { background:linear-gradient(135deg,#173833,#101a16 67%); }
+@media (min-width: 681px) and (prefers-reduced-motion: no-preference) {
+  .hero-orbit:first-child { animation: orbit-in 1.6s cubic-bezier(.2,.75,.2,1) both; }
+  .hero-core { animation: core-in 1.1s ease-out both; }
+}
+@keyframes orbit-in { from { transform:rotate(-100deg); opacity:0; } to { transform:rotate(0); opacity:1; } }
+@keyframes core-in { from { transform:rotate(30deg) scale(.8); opacity:.3; } to { transform:rotate(45deg) scale(1); opacity:1; } }
+@media(max-width:680px) { .hero { grid-template-columns:1fr; min-height:auto; } .hero-art { display:none; } }
 </style>
 </head>
 <body>
@@ -100,6 +123,7 @@ a:focus-visible{outline-color:var(--green)}
   </nav>
   <main id="top">
   <header class="hero">
+    <div class="hero-content">
     <h1 class="hero-name">Shamoni <span>Dzhavelkov</span></h1>
     <p class="hero-desc">I build software around the way teams work, from solar design and field service to e-commerce and desktop automation.</p>
     <div class="actions">
@@ -107,6 +131,12 @@ a:focus-visible{outline-color:var(--green)}
       <a class="cta-btn secondary" href="https://www.upwork.com/freelancers/~010078c58ec96b534c?mp_source=share">Connect on Upwork</a>
     </div>
     <p class="hero-meta">Sofia, Bulgaria · EU timezone · Starting at $55/hr</p>
+      </div>
+    <div class="hero-art" aria-hidden="true">
+      <div class="hero-orbit"></div>
+      <div class="hero-orbit"></div>
+      <div class="hero-core"></div>
+    </div>
   </header>
 
   <section class="section" id="projects">
